@@ -1,0 +1,330 @@
+:root {
+  --light-white: rgba(255, 255, 255, 0.904);
+  --ligheter-white: #ffffffab;
+  --gray: #ffffff7a;
+  --dark-gray: #181818;
+}
+
+@font-face {
+  font-family: "klavika light";
+  src: url(src/assets/fonts/klavika-light-webfont.woff);
+}
+
+@font-face {
+  font-family: "klavika regular";
+  src: url(src/assets/fonts/klavika-regular-webfont.woff);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: 0;
+}
+
+body {
+  margin: 0;
+  background-color: var(--dark-gray);
+}
+
+#loader {
+  position: relative;
+  height: 100vh;
+  transition: 0.2s ease;
+}
+
+.loader-conten {
+  position: absolute;
+  top: 35%;
+  left: 48%;
+}
+
+.loader-conten>img {
+  animation: fadeIn 0.2s linear forwards, floating ease-in-out 4s infinite;
+  margin-bottom: 30%;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0%, 0%) rotate(360deg);
+  }
+
+  25% {
+    transform: translate(5%, 15%) rotate(360deg);
+  }
+
+  50% {
+    transform: translate(10%, 5%) rotate(360deg);
+  }
+
+  75% {
+    transform: translate(0%, 15%) rotate(360deg);
+  }
+
+  100% {
+    transform: translate(0%, 0%) rotate(360deg);
+  }
+}
+
+.loader-conten>p {
+  position: absolute;
+  bottom: -40%;
+  font-family: 'klavika light';
+  font-style: italic;
+  color: var(--light-white);
+  text-align: center;
+  animation: toggleIn 200ms ease-in forwards;
+  width: 180%;
+  transition: text-align 10ms ease-in;
+}
+
+@keyframes toggleIn {
+  0% {
+    transform: scale(0);
+  }
+
+  20% {
+    transform: scale(1.2);
+  }
+
+  40% {
+    transform: scale(1.3);
+  }
+
+  60% {
+    transform: scale(1.2);
+  }
+
+  80% {
+    transform: scale(1);
+  }
+}
+
+
+.fade-in-animation {
+  animation: fadeInText 200ms;
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateX(40px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0)
+  }
+}
+
+.container {
+  background-image: url("src/assets/images/background.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: 0%;
+  padding-right: 800px;
+  background-origin: content-box;
+  overflow: hidden;
+  position: relative;
+  transition: background-position-x 1s ease-in-out, opacity 500ms ease;
+}
+
+.display-none {
+  display: none;
+  opacity: 0;
+}
+
+.btn {
+  position: absolute;
+  background: none;
+  border: none;
+  font-size: 6rem;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--light-white);
+  cursor: pointer;
+  border-radius: .25rem;
+  background-color: none;
+  padding: 0.5% 0.5%;
+  transition: visibility 1.1s;
+}
+
+.btn:hover {
+  color: white;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.prev {
+  left: 1rem;
+}
+
+.next {
+  right: 1rem;
+}
+
+
+.navigator {
+  position: absolute;
+  bottom: 5%;
+  left: 3%;
+  border: dotted var(--gray);
+  padding: 0.1% 0.2%;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: var(--light-white);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 8px;
+}
+
+.border-left {
+  border-left: dotted var(--gray);
+}
+
+.border-right {
+  border-right: dotted var(--ligheter-white);
+}
+
+.background-white {
+  background-color: var(--light-white);
+  transition: 0.2s linear;
+}
+
+#logo {
+  position: absolute;
+  bottom: 2%;
+  right: 4%;
+  height: 15%;
+}
+
+.top-left-text-box {
+  color: var(--light-white);
+  font-family: 'klavika regular';
+  font-weight: 100;
+  width: 70%;
+  margin-left: 5%;
+  margin-top: 2%;
+  font-size: 60px;
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 8px;
+}
+
+.top-right-text-box {
+  color: var(--light-white);
+  font-family: 'klavika regular';
+  font-weight: 100;
+  font-size: 60px;
+  position: absolute;
+  top: 2%;
+  right: 3%;
+  text-align: left;
+}
+
+.bottom-left-text-box {
+  color: var(--light-white);
+  font-family: 'klavika light';
+  position: absolute;
+  left: 3%;
+  bottom: 12%;
+  width: 33%;
+  text-shadow: 1px 1px 1px black;
+}
+
+.bottom-step-text-box {
+  color: var(--light-white);
+  font-family: 'klavika light';
+  position: absolute;
+  left: 25%;
+  bottom: 5%;
+  text-shadow: 1px 1px 1px black;
+}
+
+.center-left-text-box {
+  color: var(--light-white);
+  font-family: 'klavika regular';
+  font-weight: 100;
+  width: 29%;
+  font-size: 48px;
+  position: absolute;
+  top: 38%;
+  left: 5%;
+}
+
+.center-right-text-box {
+  color: var(--light-white);
+  font-family: 'klavika regular';
+  font-weight: 100;
+  width: 25%;
+  font-size: 48px;
+  position: absolute;
+  top: 38%;
+  right: 5%;
+  text-align: right;
+}
+
+.center-right-small-text-box {
+  color: var(--light-white);
+  font-family: 'klavika light';
+  position: absolute;
+  right: 3%;
+  bottom: 50%;
+  text-shadow: 1px 1px 1px black;
+}
+
+.center-right-small-text-box-below {
+  color: var(--light-white);
+  font-family: 'klavika light';
+  position: absolute;
+  right: 3%;
+  bottom: 47%;
+  text-shadow: 1px 1px 1px black;
+}
+
+.center-right-small-text-box-below a {
+  color: var(--light-white);
+}
+
+.center-right-small-text-box-contacts {
+  color: var(--light-white);
+  font-family: 'klavika light';
+  position: absolute;
+  right: 3%;
+  bottom: 40%;
+}
+
+.fade-in {
+  transition-property: visibility, opacity;
+  transition-delay: 1s;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
